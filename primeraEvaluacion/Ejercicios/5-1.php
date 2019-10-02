@@ -1,34 +1,37 @@
 <html>
 <body>
 
-<table border="1">
-
+<table border="1" align="center">
     <?php
-
-    $articulos = "1";
-    while ($articulos <= 10) {
-        echo "<tr>";
-
-        echo ($articulos % 2 == 0) ? "<td>$articulos par</td>" : "<td>$articulos impar</td>";
-
-        $primo = "0";
-        $num = "1";
-
-        while ($articulos > $num) {
-            if ($articulos % $num == 0) $primo++;
-
-            $num++;
-        }
-
-        echo ($primo >= 2) ? "<td>No es primo</td>" : "<td>Es primo</td>";
-
-        echo "</tr>";
-
-        $articulos++;
+    echo "<tr class='1'>";
+    $cabecera = "0";
+    while ($cabecera <= 10) {
+        echo "<th>";
+        echo $cabecera;
+        echo "</th>";
+        $cabecera++;
     }
+    echo "</tr>";
+    $x = 1;
+    while ($x <= 10) {
+        echo "<tr>";
+        echo "<th>";
+        echo $x;
+        echo "</th>";
+        $x++;
 
+        $y = 1;
+
+        while ($y <= 10) {
+            $multiplicacion = $x * $y;
+            echo "<td>";
+            echo "$x" . "*" . "$y = " . $multiplicacion;
+            echo "</td>";
+            $y++;
+        }
+        echo "</tr>";
+    }
     ?>
-
 </table>
 
 </body>
