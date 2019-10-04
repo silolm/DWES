@@ -96,8 +96,9 @@
             echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
         }
 
-        echo "</pre>palomax=$palomaX palomaY=$palomaY</div>\n";
-        echo "</pre>palomax=$palomaX2 palomaY=$palomaY2</div>\n";
+        echo "palomax=$palomaX palomaY=$palomaY\n";
+        echo "</pre>palomax2=$palomaX2 palomaY2=$palomaY2</div>\n";
+
 
     } while ($palomaX != $casaX || $palomaY != $casaY || $palomaX2 != $casaX || $palomaY2 != $casaY);
 

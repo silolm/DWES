@@ -35,43 +35,31 @@
     # Posicionar la paloma
 
     do {
-        $casaX = rand(0, $tamañoMapa - 1);
-        $casaY = rand(0, $tamañoMapa - 1);
         $palomaX = rand(0, $tamañoMapa - 1);
         $palomaY = rand(0, $tamañoMapa - 1);
         $palomaX2 = rand(0, $tamañoMapa - 1);
         $palomaY2 = rand(0, $tamañoMapa - 1);
-    } while ((abs($casaX - $palomaX) < $tamañoMapa / 2) && (abs($casaY - $palomaY) < $tamañoMapa / 2) && (abs($casaX - $palomaX2) < $tamañoMapa / 2) && (abs($casaY - $palomaY2) < $tamañoMapa / 2));
+
+    } while ((abs($palomaX2 - $palomaX) < $tamañoMapa / 2) && (abs($palomaY2 - $palomaY) < $tamañoMapa / 2));
     # Con la línea precedente nos aseguramos de que la posición inicial de la paloma
     # y su casa disten como mínimo la mitad del mapa. La función abs() devuelve el valor
     # absoluto, esto es, la cifra sin signo.
 
     do {
         #Acercar la paloma a su casa
-        if ($palomaX < $casaX)
+        if ($palomaX < $palomaX2) {
             $palomaX++;
-
-        elseif ($palomaX > $casaX)
+        } elseif ($palomaX > $palomaX2) {
             $palomaX--;
-
-
-        if ($palomaY < $casaY)
-            $palomaY++;
-        elseif ($palomaY > $casaY)
-            $palomaY--;
-
-
-        if ($palomaX2 < $casaX)
             $palomaX2++;
+        }
 
-        elseif ($palomaX2 > $casaX)
-            $palomaX2--;
-
-
-        if ($palomaY2 < $casaY)
+        if ($palomaY < $palomaY2) {
+            $palomaY++;
+        } elseif ($palomaY > $palomaY2) {
+            $palomaY--;
             $palomaY2++;
-        elseif ($palomaY2 > $casaY)
-            $palomaY2--;
+        }
 
 
         #Mostrar el mapa actual
@@ -80,12 +68,10 @@
 
         for ($y = 0; $y < $tamañoMapa; $y++) {
             for ($x = 0; $x < $tamañoMapa; $x++) {
-                if ($x == $casaX && $y == $casaY) {
-                    echo '<span class="casa">+</span>'; //Casa
-                } elseif ($x == $palomaX && $y == $palomaY) {
+                if ($x == $palomaX && $y == $palomaY) {
                     echo '<span class="paloma">%</span>'; #Paloma
                 } elseif ($x == $palomaX2 && $y == $palomaY2) {
-                    echo '<span class="paloma2">%</span>'; #Paloma2
+                    echo '<span class="paloma2">9</span>'; #Paloma2
                 } else {
                     echo '<span class="aire">.</span>'; #Aire
                 }
@@ -96,10 +82,11 @@
             echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
         }
 
-        echo "</pre>palomax=$palomaX palomaY=$palomaY</div>\n";
-        echo "</pre>palomax=$palomaX2 palomaY=$palomaY2</div>\n";
+        echo "palomax=$palomaX palomaY=$palomaY\n";
+        echo "</pre>palomax2=$palomaX2 palomaY2=$palomaY2</div>\n";
 
-    } while ($palomaX != $casaX || $palomaY != $casaY || $palomaX2 != $casaX || $palomaY2 != $casaY);
+
+    } while ($palomaX != $palomaX2 || $palomaY != $palomaY2);
 
     ?>
 
