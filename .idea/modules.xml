@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DWES-DAW.iml" filepath="$PROJECT_DIR$/.idea/DWES-DAW.iml" />
+      <module fileurl="file://C:/xampp/htdocs/.idea/htdocs.iml" filepath="C:/xampp/htdocs/.idea/htdocs.iml" />
       <module fileurl="file:///var/www/html/.idea/html.iml" filepath="/var/www/html/.idea/html.iml" />
     </modules>
   </component>
