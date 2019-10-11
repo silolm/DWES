@@ -57,7 +57,7 @@
 
 
     } while ((abs($pelotaX - $tamañoMapa) < $tamañoMapa / 2) && (abs($pelotaY - $tamañoMapa) < $tamañoMapa / 2) &&
-    (abs($pelotaX2 - $tamañoMapa) < $tamañoMapa / 2) && (abs($pelotaY2 - $tamañoMapa) < $tamañoMapa / 2) &&
+    abs($pelotaX2 - $tamañoMapa) < $tamañoMapa / 2 && (abs($pelotaY2 - $tamañoMapa) < $tamañoMapa / 2) &&
     (abs($pelotaX3 - $tamañoMapa) < $tamañoMapa / 2) && (abs($pelotaY3 - $tamañoMapa) < $tamañoMapa / 2));
     # Con la línea precedente nos aseguramos de que la posición inicial de la paloma
     # y su casa disten como mínimo la mitad del mapa. La función abs() devuelve el valor
@@ -77,20 +77,20 @@
             $direccionY *= -1;
         }
 
-        if ($pelotaX2 + $direccionX == $tamañoMapa || $pelotaX2 + $direccionX == -1) {
+        if ($pelotaX2 + $direccionX2 == $tamañoMapa || $pelotaX2 + $direccionX2 == -1) {
             $direccionX2 *= -1;
             $unChoque = true;
         }
-        if ($pelotaY2 + $direccionY == $tamañoMapa || $pelotaY2 + $direccionY == -1) {
+        if ($pelotaY2 + $direccionY2 == $tamañoMapa || $pelotaY2 + $direccionY2 == -1) {
             $unChoque = true;
             $direccionY2 *= -1;
         }
 
-        if ($pelotaX3 + $direccionX == $tamañoMapa || $pelotaX3 + $direccionX == -1) {
+        if ($pelotaX3 + $direccionX3 == $tamañoMapa || $pelotaX3 + $direccionX3 == -1) {
             $direccionX3 *= -1;
             $unChoque = true;
         }
-        if ($pelotaY3 + $direccionY == $tamañoMapa || $pelotaY3 + $direccionY == -1) {
+        if ($pelotaY3 + $direccionY3 == $tamañoMapa || $pelotaY3 + $direccionY3 == -1) {
             $unChoque = true;
             $direccionY3 *= -1;
         }
@@ -129,9 +129,9 @@
             echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
         }
 
-        echo "pelotaX=$pelotaX pelotaY=$pelotaY";
-        echo "<br>pelotaX=$pelotaX2 pelotaY=$pelotaY2";
-        echo "<br>pelotaX=$pelotaX3 pelotaY=$pelotaY3";
+        echo "X=$pelotaX Y=$pelotaY";
+        echo "<br>X2=$pelotaX2 Y2=$pelotaY2";
+        echo "<br>X3=$pelotaX3 Y3=$pelotaY3";
 
         echo "</pre>rebotes= $contadorDeRebotes</div>\n ";
 
