@@ -9,7 +9,8 @@
 <body>
 <?php
 
-$año = "2020";
+echo $año = "1900";
+echo '<br>';
 
 if (strlen($año) != 4){
     echo "MAL";

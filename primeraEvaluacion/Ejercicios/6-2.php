@@ -9,12 +9,15 @@
 <body>
 <?php
 
-$cadena = "babilonias";
-$cadena2 = strrev($cadena);
+echo $cadena = "palabras";
+$cadena2 = "";
 
+echo '<br>';
+
+for ($i = strlen($cadena) - 1; $i >= 0; $i--){
+    $cadena2 .= $cadena[$i];
+}
 echo $cadena2;
-
-
 
 ?>
 </body>
