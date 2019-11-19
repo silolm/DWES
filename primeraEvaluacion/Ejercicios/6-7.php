@@ -6,7 +6,11 @@
 </head>
 <body>
 <?php
-echo $texto = "Manipulador de alimentos";
+echo $texto = "El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja.  
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Le gustaba cenar un exquisito sándwich de jamón con zumo de piña y vodka fría.
+El viejo Señor Gómez pedía queso, kiwi y habas, pero le ha tocado un saxofón.
+Exhíbanse politiquillos zafios, con orejas kilométricas y uñas de gavilán.";
 
 $abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z"];
 
