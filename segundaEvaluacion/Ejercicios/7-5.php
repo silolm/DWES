@@ -9,7 +9,7 @@
 if (empty($_GET['1'])) {
 
     ?>
-    <form method="get" action="5.php">
+    <form method="get" action="7-5.php">
 
         <input type="text" name="nombre" placeholder="Nombre">
         <input type="hidden" name="1" value="1">

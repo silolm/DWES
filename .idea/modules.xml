@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/DWES-DAW.iml" filepath="$PROJECT_DIR$/.idea/DWES-DAW.iml" />
       <module fileurl="file://C:/xampp/htdocs/.idea/htdocs.iml" filepath="C:/xampp/htdocs/.idea/htdocs.iml" />
       <module fileurl="file:///var/www/html/.idea/html.iml" filepath="/var/www/html/.idea/html.iml" />
+      <module fileurl="file://C:/wamp64/www/phpStorm/.idea/phpStorm.iml" filepath="C:/wamp64/www/phpStorm/.idea/phpStorm.iml" />
     </modules>
   </component>
 </project>

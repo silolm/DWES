@@ -12,7 +12,7 @@
 
 if (!isset ($_POST["boton"])) {
     ?>
-    <form action="5.php" method="post">
+    <form action="7-1.php" method="post">
 
         Introduzca su nombre:
         <br>
