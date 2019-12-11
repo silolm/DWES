@@ -45,7 +45,7 @@ $conn = mysqli_connect($servidor, $username, $password, $basedatos);
 if (!$conn)
     die("Conexión fallida: " . mysqli_connect_error());
 
-$consulta = "INSERT INTO empleados VALUES (" . $nombre . ",'" . $dni . "', " . $sueldo . " , " . $plus . ");";
+$consulta = "INSERT INTO empleados VALUES (" . $dni . ",'" . $nombre . "', " . $sueldo . " , " . $plus . ");";
 $result = mysqli_query($conn, $consulta);
 
 if ($result == TRUE)
