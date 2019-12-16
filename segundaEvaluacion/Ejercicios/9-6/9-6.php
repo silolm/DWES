@@ -5,9 +5,10 @@ $password  = "m1234";
 $basedatos = "bdprueba";
 
 $nombre = $_POST["Nombre"];
-$dni    = $_POST["DNI"];
-$sueldo = 0;
-$plus = 0;
+$dni    = "SELECT MAX(DNI) FROM empleados";
+$sueldo = $_POST["Sueldo"];
+$plus   = $_POST["Plus"];
+
 
 # Crear conexión
 $conn = mysqli_connect( $servidor, $username, $password, $basedatos );
@@ -18,7 +19,15 @@ if ( ! $conn ) {
 }
 echo "Conexi&oacuten con &eacutexito <br><br>";
 
-$consulta = "INSERT INTO empleados VALUES (" . $dni . ",'" . $nombre . "', " . $sueldo . " , " . $plus . ");";
+$aux = mysqli_query( $conn, $dni );
+
+while ( $incremento = mysqli_fetch_array( $aux ) ) {
+	$dniIncremento = $incremento[0];
+
+	$dniIncremento ++;
+}
+
+$consulta = "INSERT INTO empleados VALUES (" . $dniIncremento . ",'" . $nombre . "', " . $sueldo . " , " . $plus . ");";
 $result   = mysqli_query( $conn, $consulta );
 # Como no se trata de un SELECT, mysqli_query devuelve TRUE
 # si se ha hecho correctamente y FALSE si ha habido error.
