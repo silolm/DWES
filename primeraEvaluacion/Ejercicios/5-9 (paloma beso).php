@@ -30,17 +30,17 @@
 <h1>
     <?php
 
-    $tamañoMapa = 10;
+    $tamanyoMapa = 10;
 
     # Posicionar la paloma
 
     do {
-        $palomaX = rand(0, $tamañoMapa - 1);
-        $palomaY = rand(0, $tamañoMapa - 1);
-        $palomaX2 = rand(0, $tamañoMapa - 1);
-        $palomaY2 = rand(0, $tamañoMapa - 1);
+        $palomaX = rand(0, $tamanyoMapa - 1);
+        $palomaY = rand(0, $tamanyoMapa - 1);
+        $palomaX2 = rand(0, $tamanyoMapa - 1);
+        $palomaY2 = rand(0, $tamanyoMapa - 1);
 
-    } while ((abs($palomaX2 - $palomaX) < $tamañoMapa / 2) && (abs($palomaY2 - $palomaY) < $tamañoMapa / 2));
+    } while ( ( abs($palomaX2 - $palomaX) < $tamanyoMapa / 2) && ( abs( $palomaY2 - $palomaY) < $tamanyoMapa / 2));
     # Con la línea precedente nos aseguramos de que la posición inicial de la paloma
     # y su casa disten como mínimo la mitad del mapa. La función abs() devuelve el valor
     # absoluto, esto es, la cifra sin signo.
@@ -63,11 +63,11 @@
 
 
         #Mostrar el mapa actual
-        echo '<div class="map" style="width: ' . $tamañoMapa . 'em;"><pre>';
+        echo '<div class="map" style="width: ' . $tamanyoMapa . 'em;"><pre>';
         # Recuérdese que con la etiqueta <pre> los saltos de línea que haya se reflejan en la pantalla
 
-        for ($y = 0; $y < $tamañoMapa; $y++) {
-            for ($x = 0; $x < $tamañoMapa; $x++) {
+        for ($y = 0; $y < $tamanyoMapa; $y++) {
+            for ($x = 0; $x < $tamanyoMapa; $x++) {
                 if ($x == $palomaX && $y == $palomaY) {
                     echo '<span class="paloma">%</span>'; #Paloma
                 } elseif ($x == $palomaX2 && $y == $palomaY2) {
@@ -76,7 +76,7 @@
                     echo '<span class="aire">.</span>'; #Aire
                 }
 
-                echo ($x != $tamañoMapa - 1) ? " " : ""; #siempre se añade un carácter de espacio en cada celda, salvo al final.
+                echo ( $x != $tamanyoMapa - 1) ? " " : ""; #siempre se añade un carácter de espacio en cada celda, salvo al final.
             }
 
             echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.

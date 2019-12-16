@@ -3,7 +3,6 @@
     <title>
         Simulador de paloma mensajera
     </title>
-    <link rel="stylesheet" type="text/css" href="common.css"/>
     <style type="text/css">
         div.map {
             float: left;

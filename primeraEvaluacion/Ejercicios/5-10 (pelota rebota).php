@@ -30,13 +30,13 @@
 <h1>
     <?php
 
-    $tamañoMapa = 10;
+    $tamanyoMapa = 10;
 
     # Posicionar la paloma
 
     do {
-        $pelotaX = rand(0, $tamañoMapa - 1);
-        $pelotaY = rand(0, $tamañoMapa - 1);
+        $pelotaX = rand(0, $tamanyoMapa - 1);
+        $pelotaY = rand(0, $tamanyoMapa - 1);
 
         $direccionX = 1;
         $direccionY = 1;
@@ -44,7 +44,7 @@
         $contadorDeRebotes = 0;
 
 
-    } while ((abs($pelotaX - $tamañoMapa) < $tamañoMapa / 2) && (abs($pelotaY - $tamañoMapa) < $tamañoMapa / 2));
+    } while ( ( abs( $pelotaX - $tamanyoMapa) < $tamanyoMapa / 2) && ( abs( $pelotaY - $tamanyoMapa) < $tamanyoMapa / 2));
     # Con la línea precedente nos aseguramos de que la posición inicial de la paloma
     # y su casa disten como mínimo la mitad del mapa. La función abs() devuelve el valor
     # absoluto, esto es, la cifra sin signo.
@@ -54,11 +54,11 @@
 
         $unChoque = false;
 
-        if ($pelotaX + $direccionX == $tamañoMapa || $pelotaX + $direccionX == -1) {
+        if ($pelotaX + $direccionX == $tamanyoMapa || $pelotaX + $direccionX == -1) {
             $direccionX *= -1;
             $unChoque = true;
         }
-        if ($pelotaY + $direccionY == $tamañoMapa || $pelotaY + $direccionY == -1) {
+        if ($pelotaY + $direccionY == $tamanyoMapa || $pelotaY + $direccionY == -1) {
             $unChoque = true;
             $direccionY *= -1;
         }
@@ -70,18 +70,18 @@
 
 
         #Mostrar el mapa actual
-        echo '<div class="map" style="width: ' . $tamañoMapa . 'em;"><pre>';
+        echo '<div class="map" style="width: ' . $tamanyoMapa . 'em;"><pre>';
         # Recuérdese que con la etiqueta <pre> los saltos de línea que haya se reflejan en la pantalla
 
-        for ($y = 0; $y < $tamañoMapa; $y++) {
-            for ($x = 0; $x < $tamañoMapa; $x++) {
+        for ($y = 0; $y < $tamanyoMapa; $y++) {
+            for ($x = 0; $x < $tamanyoMapa; $x++) {
                 if ($x == $pelotaX && $y == $pelotaY) {
                     echo '<span class="paloma">0</span>'; #Paloma
                 } else {
                     echo '<span class="aire">.</span>'; #Aire
                 }
 
-                echo ($x != $tamañoMapa - 1) ? " " : ""; #siempre se añade un carácter de espacio en cada celda, salvo al final.
+                echo ( $x != $tamanyoMapa - 1) ? " " : ""; #siempre se añade un carácter de espacio en cada celda, salvo al final.
             }
 
             echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
