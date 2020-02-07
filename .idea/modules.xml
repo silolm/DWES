@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DIW-DAW/.idea/DIW-DAW.iml" filepath="$PROJECT_DIR$/../DIW-DAW/.idea/DIW-DAW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DWEC-DAW/.idea/DWEC-DAW.iml" filepath="$PROJECT_DIR$/../DWEC-DAW/.idea/DWEC-DAW.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DWES-DAW.iml" filepath="$PROJECT_DIR$/.idea/DWES-DAW.iml" />
+      <module fileurl="file:///var/www/html/DragoAndDrop/.idea/DragoAndDrop.iml" filepath="/var/www/html/DragoAndDrop/.idea/DragoAndDrop.iml" />
       <module fileurl="file://C:/xampp/htdocs/.idea/htdocs.iml" filepath="C:/xampp/htdocs/.idea/htdocs.iml" />
       <module fileurl="file:///var/www/html/.idea/html.iml" filepath="/var/www/html/.idea/html.iml" />
       <module fileurl="file://C:/wamp64/www/phpStorm/.idea/phpStorm.iml" filepath="C:/wamp64/www/phpStorm/.idea/phpStorm.iml" />
