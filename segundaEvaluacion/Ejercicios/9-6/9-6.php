@@ -1,49 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jorge 9.6</title>
+</head>
+
+<body>
 <?php
-$servidor  = "localhost";
-$username  = "mario";
-$password  = "m1234";
+$servidor = "localhost";
+$username = "mario";
+$password = "m1234";
 $basedatos = "bdprueba";
 
-$nombre = $_POST["Nombre"];
-$dni    = "SELECT MAX(DNI) FROM empleados";
-$sueldo = $_POST["Sueldo"];
-$plus   = $_POST["Plus"];
-
-
 # Crear conexión
-$conn = mysqli_connect( $servidor, $username, $password, $basedatos );
+$conn = mysqli_connect($servidor, $username, $password, $basedatos);
 
 # Comprobar conexión
-if ( ! $conn ) {
-	die( "Conexi&ocacuten fallida: " . mysqli_connect_error() );
-}
-echo "Conexi&oacuten con &eacutexito <br><br>";
-
-$aux = mysqli_query( $conn, $dni );
-
-while ( $incremento = mysqli_fetch_array( $aux ) ) {
-	$dniIncremento = $incremento[0];
-
-	$dniIncremento ++;
+if (!$conn) {
+    die("Conexi&ocacuten fallida: " . mysqli_connect_error());
 }
 
-$consulta = "INSERT INTO empleados VALUES (" . $dniIncremento . ",'" . $nombre . "', " . $sueldo . " , " . $plus . ");";
-$result   = mysqli_query( $conn, $consulta );
-# Como no se trata de un SELECT, mysqli_query devuelve TRUE
-# si se ha hecho correctamente y FALSE si ha habido error.
-if ( $result == true ) {
-	echo "Se ha insertado correctamente <br>";
-} else {
-	# La siguiente función muestra el último error, en caso
-	# de haberlo.
-	echo mysqli_error( $conn );
-	die ( "Hubo un error" );
+$consulta = "SELECT max(DNI) AS resultado from empleados;";
+
+$result = mysqli_query($conn, $consulta);
+
+$row = mysqli_fetch_assoc($result);
+$dni = $row['resultado'] + 1;
+$nombre = $_POST["nombre"];
+$sueldo = $_POST["sueldo"];
+$plus = $_POST["plus"];
+
+$consulta = "INSERT INTO empleados VALUES ($dni, '$nombre', $sueldo, $plus);";
+
+mysqli_query($conn, $consulta);
+echo(mysqli_error($conn));
+
+$consulta = ("SELECT * FROM empleados;");
+
+$result = mysqli_query($conn, $consulta);
+echo("<br>");
+
+while ($fila = mysqli_fetch_array($result)) {
+
+    ($fila["DNI"] . " - " . $fila["nombre"] . " - " . $fila["sueldo"] . " - " . $fila["plus"] );
+    ("<br>");
 }
 
-# Como no se trata de un SELECT, no hace falta el
-# mysqli_free_result($result)
-
-
-mysqli_close( $conn );
+mysqli_close($conn);
 
 ?>
+</body>
+
+</html>

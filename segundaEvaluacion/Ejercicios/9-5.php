@@ -11,7 +11,7 @@
 if (!isset ($_POST["boton"])) {
     ?>
 
-    <form action="5.php" method="post">
+    <form action="9-5.php" method="post">
 
         <input type="text" name="Nombre" placeholder="Nombre">
         <br>
@@ -28,7 +28,6 @@ if (!isset ($_POST["boton"])) {
 
     <?php
 }
-
 $nombre = $_POST["Nombre"];
 $dni = $_POST["DNI"];
 $sueldo = $_POST["Sueldo"];
