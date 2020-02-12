@@ -27,7 +27,7 @@ if ( isset( $_COOKIE["micookie"] ) ) {
 } else {
 	?>
 
-    <form action="5.php" method="GET">
+    <form action="10-2.php" method="GET">
 
         <input type="text" name="nombre" placeholder="Nombre">
         <br>

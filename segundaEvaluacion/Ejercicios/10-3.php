@@ -27,13 +27,11 @@ if ( isset( $_COOKIE["micookie"] ) ) {
 
 	?>
 
-    <form action="5.php" method="GET">
-
+    <form action="10-3.php" method="GET">
         <input type='hidden' name='borar' value='borrar'>
         <br>
         <input type='submit' name='borrarcookie' value='Borrar Cookie'>
         <br><br>
-
     </form>
 
 	<?php
