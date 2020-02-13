@@ -1,38 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
 <?php
-$servidor = "localhost";
-$username = "mario";
-$password = "m1234";
-$basedatos = "bdprueba";
+session_start();
 
-$nombre = $_POST["Nombre"];
-$dni = $_POST["DNI"];
+if (isset($_POST["nombre"]) & !empty($_POST["nombre"]))
+    $_SESSION["nombre"] = $_POST["nombre"];
 
-# Crear conexión
-$conn = mysqli_connect($servidor, $username, $password, $basedatos);
+if (!isset($_SESSION["nombre"])) {
+    ?>
 
-# Comprobar conexión
-if (!$conn) {
-    die("Conexi&ocacuten fallida: " . mysqli_connect_error());
+    <form action="11-1.php" method="POST">
+
+        <br>
+        Introduzca su Nombre:
+        <br>
+        <input type="text" name="nombre">
+
+        <br>
+        <input type="submit" value="enviar">
+
+    </form>
+
+    <?php
+
+} else {
+    $nombre = $_SESSION['nombre'];
+    echo("Buenas $nombre");
 }
-echo "Conexi&oacuten con &eacutexito <br><br>";
-
-$consulta = "INSERT INTO empleados VALUES(" . $dni . ",'" . $nombre . "');";
-$result = mysqli_query($conn, $consulta);
-# Como no se trata de un SELECT, mysqli_query devuelve TRUE
-# si se ha hecho correctamente y FALSE si ha habido error.
-if ($result == TRUE)
-    echo "Se ha insertado correctamente <br>";
-else {
-    # La siguiente función muestra el último error, en caso
-    # de haberlo.
-    echo mysqli_error($conn);
-    die ("Hubo un error");
-}
-
-# Como no se trata de un SELECT, no hace falta el
-# mysqli_free_result($result)
-
-
-mysqli_close($conn);
-
 ?>
+</body>
+</html>

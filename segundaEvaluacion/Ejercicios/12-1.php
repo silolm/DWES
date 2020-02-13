@@ -29,10 +29,10 @@
         <?php
 
         $tamanyoMapa = 10;
-        $casaX;
-        $casaY;
-        $palomaX;
-        $palomaY;
+        $casaX = 0;
+        $casaY = 0;
+        $palomaX = 0;
+        $palomaY = 0;
 
         init($tamanyoMapa);
 
