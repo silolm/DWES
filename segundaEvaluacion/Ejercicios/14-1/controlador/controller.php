@@ -1,10 +1,10 @@
 <?php
-require_once '..modelo/modelo.php';
-$modelo = new Modelo();
 
-$peticion = $_GET["request"];
+//Requier model
+require_once('../modelo/modelo.php');
 
-if ($peticion == "findAll")
-$modelo->consultar();
+//extraer productos
+$productos = listaProductos();
 
-?>
+//requier vista
+require('../vista/vista.php');

@@ -6,41 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <?php
-        class Progenitor {
-            public $apellido;
+<?php
 
-            public function __construct($apellido) {
-                $this->apellido = $apellido;
-            }
+class Progenitor
+{
+    public $apellido;
 
-            public function miApellido() {
-                echo $this->apellido;
-            }
-        }
+    public function __construct($apellido)
+    {
+        $this->apellido = $apellido;
+    }
 
-        class Descendiente extends Progenitor {
-            public $nombre;
+    public function miApellido()
+    {
+        echo $this->apellido;
+    }
+}
 
-            public function __construct($apellido, $nombre) {
-                parent::__construct($apellido);
-                $this->nombre = $nombre;
-            }
+class Descendiente extends Progenitor
+{
+    public $nombre;
 
-            public function miApellido() {
-                parent::miApellido();
-            }
-        }
+    public function __construct($apellido, $nombre)
+    {
+        parent::__construct($apellido);
+        $this->nombre = $nombre;
+    }
 
-        $progenitor = new Progenitor("Silla");
-        echo "Progenitor: ";
-        $progenitor->miApellido();
+    public function miApellido()
+    {
+        parent::miApellido();
+    }
+}
 
-        echo "<br>";
+$progenitor = new Progenitor("Silla");
+echo "Progenitor: ";
+$progenitor->miApellido();
 
-        $descendiente = new Descendiente("Silla", "Mario");
-        echo "Descendiente: ";
-        $descendiente->miApellido();
-    ?>
+echo "<br>";
+
+$descendiente = new Descendiente("Silla", "Mario");
+echo "Descendiente: ";
+$descendiente->miApellido();
+?>
 </body>
 </html>
