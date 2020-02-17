@@ -66,7 +66,7 @@ if ( isset( $_COOKIE["micookie"] ) ) {
 
 	$lastDNI = mysqli_fetch_array( $result );
 
-	echo $lastDNI[0];
+    echo "last(dni) ➪ ". $lastDNI[0];
 
 	$ultDNI = intval( $lastDNI[0] );
 

@@ -7,11 +7,11 @@
 <body>
 
 <?php
-$uploads_dir = 'C:\wamp64\www\phpStorm';
+$uploads_dir = '\home/daw/home/AQUI';
 $tmp_name = $_FILES["archivo"]["tmp_name"];
 $name = basename($_FILES["archivo"]["tmp_name"]);
 
-mkdir("C:\wamp64\www\phpStorm" . $_POST["nombre"], 0777);
+mkdir("\home/daw/home/AQUI" . $_POST["nombre"], 0777);
 move_uploaded_file($tmp_name, "$uploads_dir/$name" . $_POST["nombre"]);
 ?>
 

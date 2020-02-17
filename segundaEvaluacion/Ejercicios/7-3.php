@@ -10,7 +10,7 @@
 if (!isset ($_GET ["regalo"])) {
 
     ?>
-    <form action="5.php" method="get">
+    <form action="7-3.php" method="get">
         Marque la casilla si quiere envoltorio para regalo:<br>
 
         <input type="checkbox" name="regalo" value="envolver">

@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form method="get" action="5.php">
+<form method="get" action="7-4.php">
     <input type="number" name="operando1">
     <select name="operador">
         <option value="+">+
